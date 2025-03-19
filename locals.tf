@@ -3,31 +3,37 @@ locals {
 
   nsg_rules = [
     {
-      name                   = "Allow_HTTP"
-      priority               = 100
-      direction              = "Inbound"
-      access                 = "Allow"
-      protocol               = "Tcp"
-      source_port_range      = "*"
-      destination_port_range = "80"
+      name                         = "Allow_HTTP"
+      priority                     = 100
+      direction                    = "Inbound"
+      access                       = "Allow"
+      protocol                     = "Tcp"
+      source_port_range            = "*"
+      destination_port_range       = "80"
+      source_address_prefixes      = ["*"]
+      destination_address_prefixes = ["*"]
     },
     {
-      name                   = "Allow_HTTPS"
-      priority               = 101
-      direction              = "Inbound"
-      access                 = "Allow"
-      protocol               = "Tcp"
-      source_port_range      = "*"
-      destination_port_range = "443"
+      name                         = "Allow_HTTPS"
+      priority                     = 101
+      direction                    = "Inbound"
+      access                       = "Allow"
+      protocol                     = "Tcp"
+      source_port_range            = "*"
+      destination_port_range       = "443"
+      source_address_prefixes      = ["*"]
+      destination_address_prefixes = ["*"]
     },
     {
-      name                   = "Allow_SSH"
-      priority               = 102
-      direction              = "Inbound"
-      access                 = "Allow"
-      protocol               = "Tcp"
-      source_port_range      = "*"
-      destination_port_range = "22"
+      name                         = "Allow_SSH"
+      priority                     = 102
+      direction                    = "Inbound"
+      access                       = "Allow"
+      protocol                     = "Tcp"
+      source_port_range            = "*"
+      destination_port_range       = "22"
+      source_address_prefixes      = ["*"]
+      destination_address_prefixes = ["*"]
     }
   ]
 }
